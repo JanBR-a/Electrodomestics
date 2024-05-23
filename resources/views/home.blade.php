@@ -45,17 +45,17 @@
                 @csrf
                 @method('POST')
                 <label for="name">Nombre del electrodomestico:</label><br>
-                <input type="text" name="name" value="{{ $electrodomestic['name'] }}"><br><br>
+                <input type="text" name="name" value=""><br><br>
                 <label for="description">Descripción del electrodomestico:</label><br>
-                <input type="text" name="description" value="{{ $electrodomestic['description'] }}"><br><br>
+                <input type="text" name="description" value=""><br><br>
                 <label for="category">Categoría del electrodomestico:</label><br>
-                <input type="text" name="image" value="{{ $electrodomestic['image'] }}"><br><br>
+                <input type="text" name="image" value=""><br><br>
                 <label for="brand">Marca del electrodomestico:</label><br>
-                <input type="text" name="brand" value="{{ $electrodomestic['brand'] }}"><br><br>
+                <input type="text" name="brand" value=""><br><br>
                 <label for="category">Categoría del electrodomestico:</label><br>
-                <input type="text" name="category" value="{{ $electrodomestic['category'] }}"><br><br>
+                <input type="text" name="category" value=""><br><br>
                 <label for="price">Precio del electrodomestico:</label><br>
-                <input type="number" name="price" value="{{ $electrodomestic['price'] }}"><br><br>
+                <input type="number" name="price" value=""><br><br>
                 <button type="submit" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-md">Guardar</button>
             </form>
         </div>
