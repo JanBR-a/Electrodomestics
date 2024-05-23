@@ -48,12 +48,15 @@
             <p id="category" class="text-gray-600 mb-4"> Categoría: {{ $electrodomestic['category'] }}</p>
             <p id="price" class="text-gray-700"> Precio: {{ $electrodomestic['price'] }}</p>
             <label for=""></label>
+            @auth
             <div class="mt-4">
                 <button onclick="editElectrodomestic()" id="editBtn"
                     class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md">Actualizar</button>
                 <button onclick="deleteElectrodomestic()" id="deleteBtn"
                     class="ml-2 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-md">Borrar</button>
             </div>
+            @else
+            @endauth
         </div>
     </div>
 
@@ -64,7 +67,6 @@
                 editForm.style = "display:block";
                 var electrodomesticData = document.getElementById("electrodomesticData");
                 electrodomesticData.style = "display:none";
-                // Cambiar el botón "Actualizar" a "Guardar"
                 document.getElementById("editBtn").outerHTML =
                 '<button onclick="saveChanges()" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-md">Guardar</button>';
                 document.getElementById("deleteBtn").outerHTML = '';
@@ -78,12 +80,10 @@
                 detailsElectrodomestic.style = "display:none";
                 var electrodomesticData = document.getElementById("electrodomesticData");
                 electrodomesticData.style = "display:none";
-                // Cambiar el botón "Borrar" a "Cancelar"
                 document.getElementById("deleteBtn").outerHTML =
                 '<button onclick="cancelDelete()" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-md">Cancelar</button>';
                 document.getElementById("editBtn").outerHTML = '';
             }
         </script>
     </body>
-
 </html>

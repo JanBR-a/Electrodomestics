@@ -32,10 +32,12 @@
                 @endforeach
             </div>
             <br><br>
+            @auth
             <div class="flex justify-center my-4" >
                 <button id="addElectrodomestic" onclick="addElectrodomestics()" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md">Añadir Electrodomesticos</button>
             </div>
-
+            @else
+            @endauth
         </div>
         <div id="addForm" class="container mx-auto px-4" style="display:none">
             <h1 class="text-3xl font-semibold text-center my-8">Añadir Electrodomesticos</h1>
@@ -61,7 +63,7 @@
     <script>
     function mostrarElectrodomestics(electrodomestics) {
         var listaElectrodomestics = document.getElementById('listaElectrodomestics');
-        listaElectrodomestics.innerHTML = ''; // Limpiar resultados anteriores
+        listaElectrodomestics.innerHTML = '';
 
             electrodomestics.forEach(electrodomestic => {
             var card = document.createElement('div');
@@ -93,12 +95,6 @@
 
 
     }
-    // Escuchar el evento keypress en el campo de búsqueda para buscar al presionar Enter
-    document.getElementById('buscarInput').addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            buscarElectrodomestics();
-        }
-    });
     </script>
 </body>
 </html>
